@@ -56,12 +56,8 @@ namespace DiscordFloodCore
 
         public void Start()
         {
-            if (InviteLink.Length < 8)
-            {
-                Console.WriteLine($"Invalid invite link. {InviteLink}");
-                Environment.Exit(0);
-            }
-            InviteCode = InviteLink.Substring(InviteLink.Length - _discordInviteCodeLenght);
+            if(InviteLink.Length >= 8)
+                InviteCode = InviteLink.Substring(InviteLink.Length - _discordInviteCodeLenght);
 
             var urlToJoinChannel = $"{_discordApiUrlBase}/invites/{InviteCode}";
             JoinChannel(urlToJoinChannel);

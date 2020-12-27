@@ -74,5 +74,10 @@ namespace DiscordBot_FrontEnd
         {
             Message = txtmessage.Text;
         }
+
+        private void Form_Close(object sender, FormClosingEventArgs e)
+        {
+            Core.Stop();
+        }
     }
 }

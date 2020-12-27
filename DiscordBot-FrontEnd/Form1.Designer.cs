@@ -221,6 +221,7 @@ namespace DiscordBot_FrontEnd
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Discord Flooder";
+            this.FormClosing += Form_Close;
             this.ResumeLayout(false);
             this.PerformLayout();
 
