@@ -226,6 +226,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ApplicationView";
             this.Text = "Discord Flooder";
+            this.FormClosing += Form_Close;
             this.ResumeLayout(false);
             this.PerformLayout();
 
