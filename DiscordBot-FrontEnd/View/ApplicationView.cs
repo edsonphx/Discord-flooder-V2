@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
-using DiscordFloodCore;
-using DiscordFlooderCore.DTO;
+using DiscordFlooder.BackEnd.DTO;
+using Core = DiscordFlooder.BackEnd.Core;
 
-namespace DiscordBot_FrontEnd
+namespace DiscordFlooder.FrontEnd.View
 {
-    public partial class Form1 : Form
+    public partial class ApplicationView : Form
     {
         private string TokenPath { get; set; }
         private string ProxyPath { get; set; }
@@ -13,48 +13,51 @@ namespace DiscordBot_FrontEnd
         private string InviteLink { get; set; }
         private string ChannelId { get; set; }
         private string Message { get; set; } = "https://github.com/edsonphx/Discord-flooder-V2";
+        private bool SkipJoin { get; set; }
 
-        public Form1()
+        public ApplicationView()
         {
             InitializeComponent();
         }
 
         private void FilePathToTokenList_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            TokenPath = openFileDialog1.FileName;
+            openFilePathTokenList.ShowDialog();
+            TokenPath = openFilePathTokenList.FileName;
         }
 
         private void FilePathToProxyList_Click(object sender, EventArgs e)
         {
-            openFileDialog2.ShowDialog();
-            ProxyPath = openFileDialog2.FileName;
+            openFilePathProxyList.ShowDialog();
+            ProxyPath = openFilePathProxyList.FileName;
         }
 
-        private void Start_Click(object sender, EventArgs e)
+        private void ExecuteButton_Click(object sender, EventArgs e)
         {
-            if (!Core.IsRunning) 
+            if (!Core.DiscordFlooder.IsRunning)
             {
-                var inbound = new DataDTO(TokenPath,
+                var inbound = new DiscordFlooderInbound(TokenPath,
                 ProxyPath,
                 Delay,
                 InviteLink,
                 ChannelId,
-                Message);
+                Message,
+                SkipJoin);
 
-                new Core(inbound).Start();
+                new Core.DiscordFlooder(inbound).Start();
+                executeButton.Text = "Stop";
+            }
+            else 
+            {
+                BackEnd.Core.DiscordFlooder.Stop();
+                executeButton.Text = "Start";
             }
         }
-
-        private void Stop_Click(object sender, EventArgs e)
-        {
-            Core.Stop();
-        }
-
+       
         private void Delay_TextChanged(object sender, EventArgs e)
         {
             int delay;
-            if(int.TryParse(txtdelay.Text, out delay))
+            if(int.TryParse(messageDelayTextBox.Text, out delay))
             {
                 Delay = delay;
             }
@@ -62,22 +65,27 @@ namespace DiscordBot_FrontEnd
 
         private void Invite_TextChanged(object sender, EventArgs e)
         {
-            InviteLink = invite.Text;
+            InviteLink = inviteTextBox.Text;
         }
 
         private void ChannelId_TextChanged(object sender, EventArgs e)
         {
-            ChannelId = id.Text;
+            ChannelId = channelIdTextBox.Text;
         }
 
         private void TextMessage_TextChanged(object sender, EventArgs e)
         {
-            Message = txtmessage.Text;
+            Message = messageTextBox.Text;
         }
 
         private void Form_Close(object sender, FormClosingEventArgs e)
         {
-            Core.Stop();
+            Core.DiscordFlooder.Stop();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            SkipJoin = skipJoinCheckBox.Checked;
         }
     }
 }

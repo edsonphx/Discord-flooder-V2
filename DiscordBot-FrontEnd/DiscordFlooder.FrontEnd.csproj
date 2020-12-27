@@ -66,16 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="View\ApplicationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\ApplicationView.Designer.cs">
+      <DependentUpon>ApplicationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\ApplicationView.resx">
+      <DependentUpon>ApplicationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,12 +104,6 @@
     <None Include="images\boulos.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DiscordFloodCore\DiscordFloodCore.csproj">
-      <Project>{f5088127-7833-4a44-8333-6e02ce0ab3da}</Project>
-      <Name>DiscordFloodCore</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="sickle.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +117,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiscordFloodCore\DiscordFlooder.BackEnd.csproj">
+      <Project>{f5088127-7833-4a44-8333-6e02ce0ab3da}</Project>
+      <Name>DiscordFlooder.BackEnd</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
