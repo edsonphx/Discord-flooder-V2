@@ -49,7 +49,7 @@ namespace DiscordFlooder.FrontEnd.View
             }
             else 
             {
-                BackEnd.Core.DiscordFlooder.Stop();
+                Core.DiscordFlooder.Stop();
                 executeButton.Text = "Start";
             }
         }
@@ -83,7 +83,7 @@ namespace DiscordFlooder.FrontEnd.View
             Core.DiscordFlooder.Stop();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void SkipJoin_CheckedChanged(object sender, EventArgs e)
         {
             SkipJoin = skipJoinCheckBox.Checked;
         }
