@@ -33,15 +33,17 @@ namespace DiscordBot_FrontEnd
 
         private void Start_Click(object sender, EventArgs e)
         {
-
-            var inbound = new DataDTO(TokenPath,
+            if (!Core.IsRunning) 
+            {
+                var inbound = new DataDTO(TokenPath,
                 ProxyPath,
                 Delay,
                 InviteLink,
                 ChannelId,
                 Message);
 
-            new Core(inbound).Start();
+                new Core(inbound).Start();
+            }
         }
 
         private void Stop_Click(object sender, EventArgs e)
@@ -51,7 +53,11 @@ namespace DiscordBot_FrontEnd
 
         private void Delay_TextChanged(object sender, EventArgs e)
         {
-            Delay = int.Parse(txtdelay.Text);
+            int delay;
+            if(int.TryParse(txtdelay.Text, out delay))
+            {
+                Delay = delay;
+            }
         }
 
         private void Invite_TextChanged(object sender, EventArgs e)

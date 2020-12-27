@@ -5,7 +5,6 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace DiscordFloodCore
 {
@@ -68,8 +67,8 @@ namespace DiscordFloodCore
             JoinChannel(urlToJoinChannel);
 
             var urlToSendMessage = $"{_discordApiUrlBase}/channels/{ChannelId}/messages";
-
             var t = new Thread(() => SendMessage(urlToSendMessage));
+
             t.Start();
         }
 
@@ -114,8 +113,9 @@ namespace DiscordFloodCore
                     {
                         Console.WriteLine($"{token} sended message to channel.");
                     }
+
+                    Thread.Sleep(Delay);
                 }
-                Thread.Sleep(Delay);
             }
         }
     }
