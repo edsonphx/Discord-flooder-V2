@@ -84,5 +84,11 @@
   <ItemGroup>
     <None Include="images\boulos.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiscordFloodCore\DiscordFloodCore.csproj">
+      <Project>{f5088127-7833-4a44-8333-6e02ce0ab3da}</Project>
+      <Name>DiscordFloodCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

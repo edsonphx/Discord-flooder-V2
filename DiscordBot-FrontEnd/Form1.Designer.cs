@@ -51,12 +51,12 @@ namespace DiscordBot_FrontEnd
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label1.Location = new System.Drawing.Point(297, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(603, 36);
+            this.label1.Size = new System.Drawing.Size(500, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Discord Flooder - by alexo and edson";
             // 
@@ -120,7 +120,7 @@ namespace DiscordBot_FrontEnd
             this.button1.TabIndex = 5;
             this.button1.Text = "Lista de tokens";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.FilePathToTokenList_Click);
             // 
             // button2
             // 
@@ -130,7 +130,7 @@ namespace DiscordBot_FrontEnd
             this.button2.TabIndex = 6;
             this.button2.Text = "Lista de proxy";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.FilePathToProxyList_Click);
             // 
             // txtdelay
             // 
@@ -140,7 +140,7 @@ namespace DiscordBot_FrontEnd
             this.txtdelay.TabIndex = 7;
             this.txtdelay.Text = "500";
             this.txtdelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtdelay.TextChanged += new System.EventHandler(this.delay_TextChanged);
+            this.txtdelay.TextChanged += new System.EventHandler(this.Delay_TextChanged);
             // 
             // invite
             // 
@@ -148,7 +148,7 @@ namespace DiscordBot_FrontEnd
             this.invite.Name = "invite";
             this.invite.Size = new System.Drawing.Size(487, 20);
             this.invite.TabIndex = 9;
-            this.invite.TextChanged += new System.EventHandler(this.invite_TextChanged);
+            this.invite.TextChanged += new System.EventHandler(this.Invite_TextChanged);
             // 
             // id
             // 
@@ -156,7 +156,7 @@ namespace DiscordBot_FrontEnd
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(248, 20);
             this.id.TabIndex = 10;
-            this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
+            this.id.TextChanged += new System.EventHandler(this.ChannelId_TextChanged);
             // 
             // openFileDialog2
             // 
@@ -171,7 +171,7 @@ namespace DiscordBot_FrontEnd
             this.start.TabIndex = 12;
             this.start.Text = "floodar";
             this.start.UseVisualStyleBackColor = true;
-            this.start.Click += new System.EventHandler(this.start_Click);
+            this.start.Click += new System.EventHandler(this.Start_Click);
             // 
             // stop
             // 
@@ -181,7 +181,7 @@ namespace DiscordBot_FrontEnd
             this.stop.TabIndex = 13;
             this.stop.Text = "parar";
             this.stop.UseVisualStyleBackColor = true;
-            this.stop.Click += new System.EventHandler(this.stop_Click);
+            this.stop.Click += new System.EventHandler(this.Stop_Click);
             // 
             // txtmessage
             // 
@@ -192,7 +192,7 @@ namespace DiscordBot_FrontEnd
             this.txtmessage.Name = "txtmessage";
             this.txtmessage.Size = new System.Drawing.Size(477, 151);
             this.txtmessage.TabIndex = 14;
-            this.txtmessage.TextChanged += new System.EventHandler(this.txtmessage_TextChanged);
+            this.txtmessage.TextChanged += new System.EventHandler(this.TextMessage_TextChanged);
             // 
             // Form1
             // 
