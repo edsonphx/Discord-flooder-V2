@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiscordFlooder.FrontEnd.View;
 
-namespace DiscordBot_FrontEnd
+namespace DiscordFlooder.FrontEnd
 {
     static class Program
     {
@@ -16,7 +14,7 @@ namespace DiscordBot_FrontEnd
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ApplicationView());
         }
     }
 }

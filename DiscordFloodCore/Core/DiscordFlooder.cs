@@ -1,4 +1,4 @@
-﻿using DiscordFlooderCore.DTO;
+﻿using DiscordFlooder.BackEnd.DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,9 +6,9 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 
-namespace DiscordFloodCore
+namespace DiscordFlooder.BackEnd.Core
 {
-    public class Core
+    public class DiscordFlooder
     {
         public static bool IsRunning { get; set; }
         private IEnumerable<string> TokenList { get; set; }
@@ -18,11 +18,12 @@ namespace DiscordFloodCore
         private string InviteCode { get; set; }
         private string ChannelId { get; set; }
         private string Message { get; set; }
+        private bool SkipJoin { get; set; }
 
         private readonly int _discordInviteCodeLenght = 8;
         private readonly string _discordApiUrlBase = "https://discord.com/api/v8";
 
-        public Core(DataDTO inbound)
+        public DiscordFlooder(DiscordFlooderInbound inbound)
         {
             IsRunning = true;
             TokenList = GetList(inbound.TokenListPath);
@@ -31,6 +32,7 @@ namespace DiscordFloodCore
             InviteLink = inbound.InviteLink;
             ChannelId = inbound.ChannelId;
             Message = inbound.Message;
+            SkipJoin = inbound.SkipJoin;
         }
 
         private IEnumerable<string> GetList(string filePath)
@@ -56,11 +58,18 @@ namespace DiscordFloodCore
 
         public void Start()
         {
-            if(InviteLink.Length >= 8)
+            if (!SkipJoin)
+            {
+                if (InviteLink.Length < 8)
+                {
+                    Console.WriteLine($"Invalid invite link. {InviteLink}");
+                    Environment.Exit(0);
+                }
                 InviteCode = InviteLink.Substring(InviteLink.Length - _discordInviteCodeLenght);
 
-            var urlToJoinChannel = $"{_discordApiUrlBase}/invites/{InviteCode}";
-            JoinChannel(urlToJoinChannel);
+                var urlToJoinChannel = $"{_discordApiUrlBase}/invites/{InviteCode}";
+                JoinChannel(urlToJoinChannel);
+            }
 
             var urlToSendMessage = $"{_discordApiUrlBase}/channels/{ChannelId}/messages";
             var t = new Thread(() => SendMessage(urlToSendMessage));
@@ -109,7 +118,6 @@ namespace DiscordFloodCore
                     {
                         Console.WriteLine($"{token} sended message to channel.");
                     }
-
                     Thread.Sleep(Delay);
                 }
             }

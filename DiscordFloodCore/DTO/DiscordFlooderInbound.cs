@@ -1,13 +1,14 @@
-﻿namespace DiscordFlooderCore.DTO
+﻿namespace DiscordFlooder.BackEnd.DTO
 {
-    public class DataDTO
+    public class DiscordFlooderInbound
     {
-        public DataDTO(string tokenListPath,
+        public DiscordFlooderInbound(string tokenListPath,
             string proxyListPath,
             int delay, 
             string inviteLink,
             string channelId,
-            string message)
+            string message,
+            bool skipJoin)
         {
             TokenListPath = tokenListPath;
             ProxyListPath = proxyListPath;
@@ -15,6 +16,7 @@
             InviteLink = inviteLink;
             ChannelId = channelId;
             Message = message;
+            SkipJoin = skipJoin;
         }
 
         public string TokenListPath { get; private set; }
@@ -23,6 +25,6 @@
         public string InviteLink { get; private set; }
         public string ChannelId { get; private set; }
         public string Message { get; private set; }
-
+        public bool SkipJoin { get; private set; }
     }
 }
