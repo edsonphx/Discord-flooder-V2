@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordFlooder.FrontEnd", "DiscordBot-FrontEnd\DiscordFlooder.FrontEnd.csproj", "{29781DD0-F4BE-4FB6-84D4-1192F800E26D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordFlooder.BackEnd", "DiscordFlooder.BackEnd\DiscordFlooder.BackEnd.csproj", "{F5088127-7833-4A44-8333-6E02CE0AB3DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordFlooder.BackEnd", "DiscordFloodCore\DiscordFlooder.BackEnd.csproj", "{F5088127-7833-4A44-8333-6E02CE0AB3DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordFlooder.FrontEnd", "DiscordFlooder.FrontEnd\DiscordFlooder.FrontEnd.csproj", "{50BE40C6-03B2-4692-B084-BBABA478F604}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{29781DD0-F4BE-4FB6-84D4-1192F800E26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29781DD0-F4BE-4FB6-84D4-1192F800E26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29781DD0-F4BE-4FB6-84D4-1192F800E26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29781DD0-F4BE-4FB6-84D4-1192F800E26D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5088127-7833-4A44-8333-6E02CE0AB3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5088127-7833-4A44-8333-6E02CE0AB3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5088127-7833-4A44-8333-6E02CE0AB3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5088127-7833-4A44-8333-6E02CE0AB3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50BE40C6-03B2-4692-B084-BBABA478F604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50BE40C6-03B2-4692-B084-BBABA478F604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50BE40C6-03B2-4692-B084-BBABA478F604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50BE40C6-03B2-4692-B084-BBABA478F604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
