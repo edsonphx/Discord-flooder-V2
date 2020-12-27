@@ -218,7 +218,7 @@ namespace DiscordBot_FrontEnd
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Discord Flooder";
             this.ResumeLayout(false);
             this.PerformLayout();
 
