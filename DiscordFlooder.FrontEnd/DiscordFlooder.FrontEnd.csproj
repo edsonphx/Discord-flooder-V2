@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29781DD0-F4BE-4FB6-84D4-1192F800E26D}</ProjectGuid>
+    <ProjectGuid>{50BE40C6-03B2-4692-B084-BBABA478F604}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DiscordBot_FrontEnd</RootNamespace>
     <AssemblyName>DiscordBot_FrontEnd</AssemblyName>
@@ -119,7 +119,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DiscordFloodCore\DiscordFlooder.BackEnd.csproj">
+    <ProjectReference Include="..\DiscordFlooder.BackEnd\DiscordFlooder.BackEnd.csproj">
       <Project>{f5088127-7833-4a44-8333-6e02ce0ab3da}</Project>
       <Name>DiscordFlooder.BackEnd</Name>
     </ProjectReference>
