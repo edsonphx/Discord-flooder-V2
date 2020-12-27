@@ -9,15 +9,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace DiscordFlooder
 {
-    class main
+    class Program
     {
         private static IConfigurationRoot Configuration;
         private static IEnumerable<string> _tokenList;
-        private static int _delay;
+        private static int _delay = 1000;
         private readonly int _discordInviteCodeLenght = 8;
         private readonly string _discordApiUrlBase = "https://discord.com/api/v8";
-        
-       
 
         static void Main(string[] args)
         {
@@ -44,12 +42,8 @@ namespace DiscordFlooder
             {
                 _delay = delay;
             }
-            else
-            {
-                _delay = 1000;
-            }
 
-            new main().Run(args);
+            new Program().Run(args);
         }
         private void Run(string[] args)
         {
