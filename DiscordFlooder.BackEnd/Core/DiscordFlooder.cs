@@ -147,7 +147,7 @@ namespace DiscordFlooder.BackEnd.Core
                 Console.WriteLine("We lost him :(");
                 Console.WriteLine(ex);
             }
-            
+            Thread.CurrentThread.Abort();
         }
     }
 }
