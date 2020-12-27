@@ -11,8 +11,8 @@ namespace DiscordFlooder.BackEnd.Core
     public class DiscordFlooder
     {
         public static bool IsRunning { get; set; }
-        private IEnumerable<string> TokenList { get; set; }
-        private IEnumerable<string> ProxyList { get; set; }
+        private IList<string> TokenList { get; set; }
+        private IList<string> ProxyList { get; set; }
         private int Delay { get; set; }
         private string InviteLink { get; set; }
         private string InviteCode { get; set; }
@@ -22,6 +22,7 @@ namespace DiscordFlooder.BackEnd.Core
 
         private readonly int _discordInviteCodeLenght = 8;
         private readonly string _discordApiUrlBase = "https://discord.com/api/v8";
+        private static Random _random = new Random();
 
         public DiscordFlooder(DiscordFlooderInbound inbound)
         {
@@ -35,7 +36,7 @@ namespace DiscordFlooder.BackEnd.Core
             SkipJoin = inbound.SkipJoin;
         }
 
-        private IEnumerable<string> GetList(string filePath)
+        private IList<string> GetList(string filePath)
         {
             var result = new List<string>();
 
@@ -72,7 +73,7 @@ namespace DiscordFlooder.BackEnd.Core
             }
 
             var urlToSendMessage = $"{_discordApiUrlBase}/channels/{ChannelId}/messages";
-            var t = new Thread(() => SendMessage(urlToSendMessage));
+            var t = new Thread(() => SendMessages(urlToSendMessage));
 
             t.Start();
         }
@@ -96,30 +97,58 @@ namespace DiscordFlooder.BackEnd.Core
                 }
             }
         }
-        private void SendMessage(string uri)
+        private void SendMessages(string uri)
         {
             while (IsRunning)
             {
                 foreach (var token in TokenList)
                 {
-                    var httpClient = new HttpClient();
+                    if (!IsRunning)
+                        break;
 
-                    httpClient.DefaultRequestHeaders.Add("Authorization", token);
-
-                    var content = new StringContent($"{{\"content\": \"{Message}\"}}", System.Text.Encoding.UTF8, "application/json");
-
-                    var response = httpClient.PostAsync(uri, content).Result;
-
-                    if (response.StatusCode != HttpStatusCode.OK)
-                    {
-                        Console.WriteLine($"Error while sending message to channel. Status: {response.StatusCode} Token: {token}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{token} sended message to channel.");
-                    }
+                    new Thread(() => SendMessage(uri,token)).Start();
                     Thread.Sleep(Delay);
                 }
+            }
+        }
+        private void SendMessage(string uri, string token)
+        {
+            var httpClientHandler = new HttpClientHandler();
+
+            if (ProxyList.Count > 0)
+            {
+                var index = _random.Next(ProxyList.Count);
+                var proxy = ProxyList[index];
+
+                httpClientHandler.Proxy = new WebProxy(proxy, false);
+                httpClientHandler.UseProxy = true;
+
+                Console.WriteLine($"Using proxy: {proxy}");
+            }
+
+            var httpClient = new HttpClient(httpClientHandler);
+
+            httpClient.DefaultRequestHeaders.Add("Authorization", token);
+
+            var content = new StringContent($"{{\"content\": \"{Message}\"}}", System.Text.Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = httpClient.PostAsync(uri, content).Result;
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"Error while sending message to channel. Status: {response.StatusCode} Token: {token}");
+                }
+                else
+                {
+                    Console.WriteLine($"{token} sended message to channel.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("We lost him :(");
+                Console.WriteLine(ex);
             }
         }
     }

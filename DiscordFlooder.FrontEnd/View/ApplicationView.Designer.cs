@@ -46,7 +46,7 @@
             this.skipJoinCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // label1
+            // titleLabel
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
@@ -55,152 +55,152 @@
             this.titleLabel.ForeColor = System.Drawing.Color.Crimson;
             this.titleLabel.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.titleLabel.Location = new System.Drawing.Point(297, 9);
-            this.titleLabel.Name = "label1";
+            this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(500, 33);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Discord Flooder - by alexo and edson";
             // 
-            // openFileDialog1
+            // openFilePathTokenList
             // 
             this.openFilePathTokenList.FileName = "TokenList.txt";
             // 
-            // label2
+            // messageDelayLabel
             // 
             this.messageDelayLabel.AutoSize = true;
             this.messageDelayLabel.BackColor = System.Drawing.Color.Transparent;
             this.messageDelayLabel.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.messageDelayLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.messageDelayLabel.Location = new System.Drawing.Point(12, 133);
-            this.messageDelayLabel.Name = "label2";
+            this.messageDelayLabel.Name = "messageDelayLabel";
             this.messageDelayLabel.Size = new System.Drawing.Size(198, 25);
             this.messageDelayLabel.TabIndex = 1;
             this.messageDelayLabel.Text = "Messages delay(ms):";
             // 
-            // label3
+            // inviteLabel
             // 
             this.inviteLabel.AutoSize = true;
             this.inviteLabel.BackColor = System.Drawing.Color.Transparent;
             this.inviteLabel.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inviteLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.inviteLabel.Location = new System.Drawing.Point(12, 199);
-            this.inviteLabel.Name = "label3";
+            this.inviteLabel.Name = "inviteLabel";
             this.inviteLabel.Size = new System.Drawing.Size(157, 25);
             this.inviteLabel.TabIndex = 2;
             this.inviteLabel.Text = "Invite to server:";
             // 
-            // label4
+            // channelIdLabel
             // 
             this.channelIdLabel.AutoSize = true;
             this.channelIdLabel.BackColor = System.Drawing.Color.Transparent;
             this.channelIdLabel.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.channelIdLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.channelIdLabel.Location = new System.Drawing.Point(12, 267);
-            this.channelIdLabel.Name = "label4";
+            this.channelIdLabel.Name = "channelIdLabel";
             this.channelIdLabel.Size = new System.Drawing.Size(116, 25);
             this.channelIdLabel.TabIndex = 3;
             this.channelIdLabel.Text = "Channel Id:";
             // 
-            // label5
+            // messageLabel
             // 
             this.messageLabel.AutoSize = true;
             this.messageLabel.BackColor = System.Drawing.Color.Transparent;
             this.messageLabel.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.messageLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.messageLabel.Location = new System.Drawing.Point(12, 341);
-            this.messageLabel.Name = "label5";
+            this.messageLabel.Name = "messageLabel";
             this.messageLabel.Size = new System.Drawing.Size(93, 25);
             this.messageLabel.TabIndex = 4;
             this.messageLabel.Text = "Message:";
             // 
-            // button1
+            // tokenListButton
             // 
-            this.tokenListButton.Location = new System.Drawing.Point(755, 558);
-            this.tokenListButton.Name = "button1";
+            this.tokenListButton.Location = new System.Drawing.Point(683, 560);
+            this.tokenListButton.Name = "tokenListButton";
             this.tokenListButton.Size = new System.Drawing.Size(165, 33);
             this.tokenListButton.TabIndex = 5;
             this.tokenListButton.Text = "Token list";
             this.tokenListButton.UseVisualStyleBackColor = true;
             this.tokenListButton.Click += new System.EventHandler(this.FilePathToTokenList_Click);
             // 
-            // button2
+            // proxyListButton
             // 
-            this.proxyListButton.Location = new System.Drawing.Point(966, 558);
-            this.proxyListButton.Name = "button2";
+            this.proxyListButton.Location = new System.Drawing.Point(854, 560);
+            this.proxyListButton.Name = "proxyListButton";
             this.proxyListButton.Size = new System.Drawing.Size(187, 33);
             this.proxyListButton.TabIndex = 6;
             this.proxyListButton.Text = "Proxy list";
             this.proxyListButton.UseVisualStyleBackColor = true;
             this.proxyListButton.Click += new System.EventHandler(this.FilePathToProxyList_Click);
             // 
-            // txtdelay
+            // messageDelayTextBox
             // 
             this.messageDelayTextBox.Location = new System.Drawing.Point(240, 138);
-            this.messageDelayTextBox.Name = "txtdelay";
+            this.messageDelayTextBox.Name = "messageDelayTextBox";
             this.messageDelayTextBox.Size = new System.Drawing.Size(143, 20);
             this.messageDelayTextBox.TabIndex = 7;
             this.messageDelayTextBox.Text = "500";
             this.messageDelayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.messageDelayTextBox.TextChanged += new System.EventHandler(this.Delay_TextChanged);
             // 
-            // invite
+            // inviteTextBox
             // 
             this.inviteTextBox.Location = new System.Drawing.Point(215, 205);
-            this.inviteTextBox.Name = "invite";
+            this.inviteTextBox.Name = "inviteTextBox";
             this.inviteTextBox.Size = new System.Drawing.Size(168, 20);
             this.inviteTextBox.TabIndex = 9;
             this.inviteTextBox.TextChanged += new System.EventHandler(this.Invite_TextChanged);
             // 
-            // id
+            // channelIdTextBox
             // 
             this.channelIdTextBox.Location = new System.Drawing.Point(135, 272);
-            this.channelIdTextBox.Name = "id";
+            this.channelIdTextBox.Name = "channelIdTextBox";
             this.channelIdTextBox.Size = new System.Drawing.Size(248, 20);
             this.channelIdTextBox.TabIndex = 10;
             this.channelIdTextBox.TextChanged += new System.EventHandler(this.ChannelId_TextChanged);
             // 
-            // openFileDialog2
+            // openFilePathProxyList
             // 
             this.openFilePathProxyList.FileName = "ProxyList.txt";
             // 
-            // start
+            // executeButton
             // 
             this.executeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.executeButton.Location = new System.Drawing.Point(17, 560);
-            this.executeButton.Name = "start";
+            this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(366, 31);
             this.executeButton.TabIndex = 12;
             this.executeButton.Text = "Start";
             this.executeButton.UseVisualStyleBackColor = true;
             this.executeButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
-            // txtmessage
+            // messageTextBox
             // 
             this.messageTextBox.AcceptsReturn = true;
             this.messageTextBox.AllowDrop = true;
             this.messageTextBox.Location = new System.Drawing.Point(17, 380);
             this.messageTextBox.Multiline = true;
-            this.messageTextBox.Name = "txtmessage";
+            this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.Size = new System.Drawing.Size(366, 151);
             this.messageTextBox.TabIndex = 14;
             this.messageTextBox.Text = "https://github.com/edsonphx/Discord-flooder-V2";
             this.messageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.messageTextBox.TextChanged += new System.EventHandler(this.TextMessage_TextChanged);
             // 
-            // checkBox1
+            // skipJoinCheckBox
             // 
             this.skipJoinCheckBox.AutoSize = true;
             this.skipJoinCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.skipJoinCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skipJoinCheckBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.skipJoinCheckBox.Location = new System.Drawing.Point(215, 231);
-            this.skipJoinCheckBox.Name = "checkBox1";
+            this.skipJoinCheckBox.Name = "skipJoinCheckBox";
             this.skipJoinCheckBox.Size = new System.Drawing.Size(84, 21);
             this.skipJoinCheckBox.TabIndex = 15;
             this.skipJoinCheckBox.Text = "Skip Join";
             this.skipJoinCheckBox.UseVisualStyleBackColor = false;
-            this.skipJoinCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.skipJoinCheckBox.CheckedChanged += new System.EventHandler(this.SkipJoin_CheckedChanged);
             // 
-            // Form1
+            // ApplicationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,12 +221,12 @@
             this.Controls.Add(this.inviteLabel);
             this.Controls.Add(this.messageDelayLabel);
             this.Controls.Add(this.titleLabel);
-            this.FormClosing += Form_Close;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DiscordFlooderForm";
+            this.Name = "ApplicationView";
             this.Text = "Discord Flooder";
+            this.FormClosing += Form_Close;
             this.ResumeLayout(false);
             this.PerformLayout();
 
