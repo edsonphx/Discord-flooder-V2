@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DiscordFlooder": {
+      "commandName": "Project",
+      "commandLineArgs": ""
+    }
+  }
+}
