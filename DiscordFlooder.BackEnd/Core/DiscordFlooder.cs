@@ -103,6 +103,9 @@ namespace DiscordFlooder.BackEnd.Core
             {
                 foreach (var token in TokenList)
                 {
+                    if (!IsRunning)
+                        break;
+
                     new Thread(() => SendMessage(uri,token)).Start();
                     Thread.Sleep(Delay);
                 }
@@ -147,7 +150,6 @@ namespace DiscordFlooder.BackEnd.Core
                 Console.WriteLine("We lost him :(");
                 Console.WriteLine(ex);
             }
-            Thread.CurrentThread.Abort();
         }
     }
 }
